@@ -1,0 +1,168 @@
+//
+//  Request.swift
+//  MCDonald
+//
+//  Created by Alejandro Jiménez Agudo on 4/2/16.
+//  Copyright © 2016 Gigigo SL. All rights reserved.
+//
+
+import Foundation
+
+
+open class Request: Selfie {
+	
+	open var method: String
+	open var baseURL: String
+	open var endpoint: String
+	open var headers: [String: String]?
+	open var urlParams: [String: Any]?
+	open var bodyParams: [String: Any]?
+	open var verbose = false
+	
+	private var request: URLRequest?
+	private var task: URLSessionTask?
+	
+	public init(method: String, baseUrl: String, endpoint: String, headers: [String: String]? = nil, urlParams: [String: Any]? = nil, bodyParams: [String: Any]? = nil, verbose: Bool = false) {
+		self.method = method
+		self.baseURL = baseUrl
+		self.endpoint = endpoint
+		self.headers = headers
+		self.urlParams = urlParams
+		self.bodyParams = bodyParams
+		self.verbose = verbose
+	}
+	
+	
+	// MARK: - Public Method
+	@available(*, deprecated: 2.1, message: "Use fetch(completionHandler:) instead", renamed: "fetch(completionHandler:)")
+	open func fetchData(completionHandler: @escaping (Response) -> Void) {
+		self.fetch(completionHandler: completionHandler)
+	}
+	
+	@available(*, deprecated: 2.1, message: "Use fetch(completionHandler:) instead", renamed: "fetch(completionHandler:)")
+	open func fetchJson(completionHandler: @escaping (Response) -> Void) {
+		self.fetch(completionHandler: completionHandler)
+	}
+	
+	@available(*, deprecated: 2.1, message: "Use fetch(completionHandler:) instead", renamed: "fetch(completionHandler:)")
+	open func fetchImage(completionHandler: @escaping (Response) -> Void) {
+		self.fetch(completionHandler: completionHandler)
+	}
+	
+	open func fetch(completionHandler: @escaping (Response) -> Void) {
+		guard let request = self.buildRequest() else { return }
+		self.request = request
+		let session = URLSession.shared
+		
+		if self.verbose {
+			LogManager.shared.logLevel = .debug
+			LogManager.shared.appName = "GIGLibrary"
+			self.logRequest()
+		}
+		
+		self.cancel()
+		self.task = session.dataTask(with: request) { data, urlResponse, error in
+			let response = Response(data: data, response: urlResponse, error: error)
+			
+			if self.verbose {
+				response.logResponse()
+			}
+			
+			DispatchQueue.main.async {
+				completionHandler(response)
+			}
+		}
+		
+		self.task?.resume()
+	}
+	
+	public func cancel() {
+		self.task?.cancel()
+	}
+	
+	
+	// MARK: - Private Helpers
+	
+	fileprivate func buildRequest() -> URLRequest? {
+		guard let url = URL(string: self.buildURL()) else { LogWarn("not a valid URL"); return nil }
+
+		var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 15)
+		request.httpMethod = self.method
+		request.allHTTPHeaderFields = self.headers
+		
+		// Set body is not GET
+		if let body = self.bodyParams, self.method != "GET" {
+			request.httpBody = JSON(from: body).toData()
+			
+			// Add Content-Type if it wasn't set
+			if let containsContentType = request.allHTTPHeaderFields?.keys.contains("Content-Type"),
+				!containsContentType {
+				request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+			}
+		}
+		
+		return request
+	}
+	
+	fileprivate func buildURL() -> String {
+		var url = URLComponents(string: self.baseURL)
+		url?.path = (url?.path)! + self.endpoint
+		
+        if let urlParams = self.urlParams?.map({ key, value in
+            URLQueryItem(name: key, value: String(describing: value))
+        }) {
+		url?.queryItems = concat(url?.queryItems, urlParams)
+        }
+		
+		return url?.string ?? "NOT VALID URL"
+	}
+	
+	fileprivate func logRequest() {
+		let url = self.request?.url?.absoluteString ?? "no url set"
+		let method = self.request?.httpMethod ?? "no method set"
+		
+		print("******** REQUEST ********")
+		print(" - URL:\t\t\(url)")
+		print(" - METHOD:\t\(method)")
+		self.logBody()
+		self.logHeaders()
+		print("*************************\n")
+	}
+	
+	fileprivate func logBody() {
+		guard
+			let body = self.request?.httpBody,
+			let json = try? JSON.dataToJson(body)
+			else { return }
+		
+		print(" - BODY:\n\(json)")
+	}
+	
+	fileprivate func logHeaders() {
+		guard let headers = self.request?.allHTTPHeaderFields, !headers.isEmpty else { return }
+		
+		print(" - HEADERS: {")
+		
+		for key in headers.keys {
+			if let value = headers[key] {
+				print("\t\t\(key): \(value)")
+			}
+		}
+		
+		print("}")
+	}
+	
+}
+
+
+func concat(_ lhs: [URLQueryItem]?, _ rhs: [URLQueryItem]?) -> [URLQueryItem] {
+	guard let left = lhs else {
+		return rhs ?? []
+	}
+	
+	guard let right = rhs else {
+		return left
+	}
+	
+	return left + right
+}
