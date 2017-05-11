@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A99ABB051EAE3D9A00EAB211 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABB031EAE3D9A00EAB211 /* FormTextField.swift */; };
-		A99ABB061EAE3D9A00EAB211 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABB041EAE3D9A00EAB211 /* MainButton.swift */; };
+		A99ABB091EAE476500EAB211 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABB071EAE476500EAB211 /* FormTextField.swift */; };
+		A99ABB0A1EAE476500EAB211 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99ABB081EAE476500EAB211 /* MainButton.swift */; };
 		A9D795471E8B99C800ACEDBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D795461E8B99C800ACEDBE /* AppDelegate.swift */; };
 		A9D795501E8B99C800ACEDBE /* Global in Resources */ = {isa = PBXBuildFile; fileRef = A9D7954F1E8B99C800ACEDBE /* Global */; };
 		A9D795591E8B99C800ACEDBE /* Views in Resources */ = {isa = PBXBuildFile; fileRef = A9D795581E8B99C800ACEDBE /* Views */; };
@@ -34,10 +34,18 @@
 		A9D795A31E8BA10400ACEDBE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9D795A21E8BA10400ACEDBE /* Login.storyboard */; };
 		A9D795A51E8BA98100ACEDBE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D795A41E8BA98100ACEDBE /* User.swift */; };
 		A9D795A71E8BAA8200ACEDBE /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D795A61E8BAA8200ACEDBE /* LoginService.swift */; };
+		A9FF8CCA1E94D85F00A43CDC /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FF8CC91E94D85F00A43CDC /* LoginUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		A9D795791E8B99C800ACEDBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9D7953A1E8B99C800ACEDBE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9D795411E8B99C800ACEDBE;
+			remoteInfo = CleanArchitecture;
+		};
+		A9FF8CC41E94D83100A43CDC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A9D7953A1E8B99C800ACEDBE /* Project object */;
 			proxyType = 1;
@@ -61,8 +69,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A99ABB031EAE3D9A00EAB211 /* FormTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormTextField.swift; path = Views/FormTextField.swift; sourceTree = "<group>"; };
-		A99ABB041EAE3D9A00EAB211 /* MainButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainButton.swift; path = Views/MainButton.swift; sourceTree = "<group>"; };
+		A99ABB071EAE476500EAB211 /* FormTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormTextField.swift; path = Views/FormTextField.swift; sourceTree = "<group>"; };
+		A99ABB081EAE476500EAB211 /* MainButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainButton.swift; path = Views/MainButton.swift; sourceTree = "<group>"; };
 		A9D795421E8B99C800ACEDBE /* CleanArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D795461E8B99C800ACEDBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9D795671E8B99C800ACEDBE /* AppWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWireframe.swift; sourceTree = "<group>"; };
@@ -85,6 +93,9 @@
 		A9D795A21E8BA10400ACEDBE /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Login/Login.storyboard; sourceTree = "<group>"; };
 		A9D795A41E8BA98100ACEDBE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A9D795A61E8BAA8200ACEDBE /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		A9FF8CBF1E94D83100A43CDC /* CleanArchitectureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanArchitectureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9FF8CC31E94D83100A43CDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9FF8CC91E94D85F00A43CDC /* LoginUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +117,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A9FF8CBC1E94D83100A43CDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -114,6 +132,7 @@
 			children = (
 				A9D795441E8B99C800ACEDBE /* CleanArchitecture */,
 				A9D7957B1E8B99C900ACEDBE /* CleanArchitectureTests */,
+				A9FF8CC01E94D83100A43CDC /* CleanArchitectureUITests */,
 				A9D795431E8B99C800ACEDBE /* Products */,
 				A9D795601E8B99C800ACEDBE /* Frameworks */,
 			);
@@ -124,6 +143,7 @@
 			children = (
 				A9D795421E8B99C800ACEDBE /* CleanArchitecture.app */,
 				A9D795781E8B99C800ACEDBE /* CleanArchitectureTests.xctest */,
+				A9FF8CBF1E94D83100A43CDC /* CleanArchitectureUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,8 +239,8 @@
 		A9D795581E8B99C800ACEDBE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A99ABB031EAE3D9A00EAB211 /* FormTextField.swift */,
-				A99ABB041EAE3D9A00EAB211 /* MainButton.swift */,
+				A99ABB071EAE476500EAB211 /* FormTextField.swift */,
+				A99ABB081EAE476500EAB211 /* MainButton.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -316,6 +336,15 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		A9FF8CC01E94D83100A43CDC /* CleanArchitectureUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A9FF8CC31E94D83100A43CDC /* Info.plist */,
+				A9FF8CC91E94D85F00A43CDC /* LoginUITests.swift */,
+			);
+			path = CleanArchitectureUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -355,13 +384,31 @@
 			productReference = A9D795781E8B99C800ACEDBE /* CleanArchitectureTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		A9FF8CBE1E94D83100A43CDC /* CleanArchitectureUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9FF8CC81E94D83100A43CDC /* Build configuration list for PBXNativeTarget "CleanArchitectureUITests" */;
+			buildPhases = (
+				A9FF8CBB1E94D83100A43CDC /* Sources */,
+				A9FF8CBC1E94D83100A43CDC /* Frameworks */,
+				A9FF8CBD1E94D83100A43CDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9FF8CC51E94D83100A43CDC /* PBXTargetDependency */,
+			);
+			name = CleanArchitectureUITests;
+			productName = CleanArchitectureUITests;
+			productReference = A9FF8CBF1E94D83100A43CDC /* CleanArchitectureUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A9D7953A1E8B99C800ACEDBE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Judith Medina";
 				TargetAttributes = {
@@ -372,6 +419,12 @@
 					};
 					A9D795771E8B99C800ACEDBE = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = SU5BA5HAQK;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A9D795411E8B99C800ACEDBE;
+					};
+					A9FF8CBE1E94D83100A43CDC = {
+						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = SU5BA5HAQK;
 						ProvisioningStyle = Automatic;
 						TestTargetID = A9D795411E8B99C800ACEDBE;
@@ -393,6 +446,7 @@
 			targets = (
 				A9D795411E8B99C800ACEDBE /* CleanArchitecture */,
 				A9D795771E8B99C800ACEDBE /* CleanArchitectureTests */,
+				A9FF8CBE1E94D83100A43CDC /* CleanArchitectureUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -422,6 +476,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A9FF8CBD1E94D83100A43CDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -430,13 +491,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9D795901E8B9E2A00ACEDBE /* LoginPresenter.swift in Sources */,
-				A99ABB051EAE3D9A00EAB211 /* FormTextField.swift in Sources */,
+				A99ABB091EAE476500EAB211 /* FormTextField.swift in Sources */,
 				A9D795681E8B99C800ACEDBE /* AppWireframe.swift in Sources */,
 				A9D795931E8B9E2A00ACEDBE /* LoginInteractor.swift in Sources */,
 				A9D795921E8B9E2A00ACEDBE /* LoginWireframe.swift in Sources */,
 				A9D795A71E8BAA8200ACEDBE /* LoginService.swift in Sources */,
 				A9D795A51E8BA98100ACEDBE /* User.swift in Sources */,
-				A99ABB061EAE3D9A00EAB211 /* MainButton.swift in Sources */,
+				A99ABB0A1EAE476500EAB211 /* MainButton.swift in Sources */,
 				A9D795471E8B99C800ACEDBE /* AppDelegate.swift in Sources */,
 				A9D7956A1E8B99C800ACEDBE /* AppController.swift in Sources */,
 				A9D795911E8B9E2A00ACEDBE /* LoginVC.swift in Sources */,
@@ -451,6 +512,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A9FF8CBB1E94D83100A43CDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9FF8CCA1E94D85F00A43CDC /* LoginUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -458,6 +527,11 @@
 			isa = PBXTargetDependency;
 			target = A9D795411E8B99C800ACEDBE /* CleanArchitecture */;
 			targetProxy = A9D795791E8B99C800ACEDBE /* PBXContainerItemProxy */;
+		};
+		A9FF8CC51E94D83100A43CDC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9D795411E8B99C800ACEDBE /* CleanArchitecture */;
+			targetProxy = A9FF8CC41E94D83100A43CDC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -637,6 +711,44 @@
 			};
 			name = Release;
 		};
+		A9FF8CC61E94D83100A43CDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = SU5BA5HAQK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = CleanArchitectureUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gigigo.CleanArchitectureUITests.CleanArchitectureUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = CleanArchitecture;
+			};
+			name = Debug;
+		};
+		A9FF8CC71E94D83100A43CDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = SU5BA5HAQK;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = CleanArchitectureUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gigigo.CleanArchitectureUITests.CleanArchitectureUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = CleanArchitecture;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -663,6 +775,15 @@
 			buildConfigurations = (
 				A9D795851E8B99C900ACEDBE /* Debug */,
 				A9D795861E8B99C900ACEDBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9FF8CC81E94D83100A43CDC /* Build configuration list for PBXNativeTarget "CleanArchitectureUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9FF8CC61E94D83100A43CDC /* Debug */,
+				A9FF8CC71E94D83100A43CDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

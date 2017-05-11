@@ -30,7 +30,6 @@ struct LoginPresenter {
     var interactor: LoginInteractorInput
     
     func handle(error: Error) {
-        
         switch error {
         case LoginError.credentialsNil, LoginError.credentialsEmpty:
             self.view?.showAlert(message: "Before proceeding add your username and password")

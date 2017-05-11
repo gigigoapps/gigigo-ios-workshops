@@ -24,6 +24,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QaP-Cu-Y5C" customClass="MainButton" customModule="CleanArchitecture" customModuleProvider="target">
                                 <rect key="frame" x="24" y="567" width="327" height="50"/>
                                 <color key="backgroundColor" red="0.3208665966" green="0.9143222312" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="loginButton" label="loginButton"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="huR-Lu-oFX"/>
                                 </constraints>
@@ -37,6 +38,7 @@
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7E2-b7-Sol" customClass="FormTextField" customModule="CleanArchitecture" customModuleProvider="target">
                                 <rect key="frame" x="24" y="150" width="327" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="emailTextField" label="emailTextField"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="gHF-iz-3Oq"/>
                                 </constraints>
@@ -46,12 +48,13 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BhU-SK-7Zp" customClass="FormTextField" customModule="CleanArchitecture" customModuleProvider="target">
                                 <rect key="frame" x="24" y="220" width="327" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="passwordTextField" label="passwordTextField"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="VEV-rj-8rc"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

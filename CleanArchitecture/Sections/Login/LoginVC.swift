@@ -29,7 +29,9 @@ class LoginVC: UIViewController {
     // MARK: - Events
 
     @IBAction func signInTapped(_ sender: Any) {
-        self.presenter?.userDidTapSignIn(username: self.emailTextField.text, password: self.passwordTextField.text)
+        self.presenter?.userDidTapSignIn(
+            username: self.emailTextField.text,
+            password: self.passwordTextField.text)
     }
 }
 
@@ -51,7 +53,7 @@ extension LoginVC: Instantiable {
 extension LoginVC: LoginUI {
     
     func showAlert(message: String) {
-        let alert = Alert(title: "", message: message)
+        let alert = Alert(title: "Clean", message: message)
         alert.addDefaultButton("OK", usingAction: nil)
         alert.show()
     }

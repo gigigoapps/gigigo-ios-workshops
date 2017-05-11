@@ -53,7 +53,6 @@ extension LoginInteractor: LoginInteractorInput {
         }
         
         let success = self.service.signIn(username: email, password: password)
-        
         if success {
             let user = User(username: email)
             self.output?.signInDidFinish(
